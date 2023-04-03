@@ -27,6 +27,6 @@ namespace ECarManiac.Interfaces
         /// Get all the 
         /// </summary>
         /// <returns>All the cars int the database</returns>
-        public Car GetAll();
+        public List<Car> GetAll();
     }
 }
