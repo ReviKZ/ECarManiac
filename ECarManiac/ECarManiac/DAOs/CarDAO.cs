@@ -128,7 +128,7 @@ namespace ECarManiac.DAOs
                 decimal Acceleration;
                 int MaxSpeed;
                 int Trunk;
-                int Frunk;
+                string Frunk;
 
                 using (var connection = new SqlConnection(_connectionString))
                 {
@@ -157,7 +157,7 @@ namespace ECarManiac.DAOs
                     Acceleration = (decimal)reader["Acceleration"];
                     MaxSpeed = (int)reader["MaxSpeed"];
                     Trunk = (int)reader["Trunk"];
-                    Frunk = (int)reader["Frunk"];
+                    Frunk = reader["Frunk"] as string;
 
                     connection.Close();
                 }
@@ -190,7 +190,6 @@ namespace ECarManiac.DAOs
                     {
                         connection.Open();
                     }
-                    cmd.Parameters.AddWithValue("@Id", id);
                     var reader = cmd.ExecuteReader();
 
                     if (!reader.HasRows)
@@ -202,7 +201,7 @@ namespace ECarManiac.DAOs
                     {
                         var Brand = (string)reader["Brand"];
                         var Model = (string)reader["Model"];
-                        var SubType = (string)reader["SubType"];
+                        var SubType = reader["SubType"] as string;
                         var Year = (int)reader["Year"];
                         var Country = (string)reader["Country"];
                         var BodyType = (string)reader["BodyType"];
@@ -215,7 +214,7 @@ namespace ECarManiac.DAOs
                         var Acceleration = (decimal)reader["Acceleration"];
                         var MaxSpeed = (int)reader["MaxSpeed"];
                         var Trunk = (int)reader["Trunk"];
-                        var Frunk = (int)reader["Frunk"];
+                        var Frunk = reader["Frunk"] as string;
 
                         var car = new Car(Brand, Model, SubType,
                             Year, Country, BodyType,
