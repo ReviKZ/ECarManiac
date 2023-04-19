@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
+import Layout from './Pages';
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
           {/* Main Router Tag */}
           <Routes>
               {/* Layout Tag */}
-              <Route path="/" element="" >
+              <Route path="/" element={<Layout />} >
                   {/* Page Tags */}
 
                   {/* Index Page / Navigation */}
