@@ -3,6 +3,7 @@ import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
 import Layout from './Pages/Layout';
 import Home from './Pages/Home';
+import CarList from './Pages/CarList';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
                   <Route path="" element={<Home />} />
 
                   {/* Listing Page */}
-                  <Route path="get/list-all" element="" />
+                  <Route path="get/list-all" element={<CarList />} />
 
                   {/* Id Specific Page */}
                   <Route path="get/:id" element="" />
