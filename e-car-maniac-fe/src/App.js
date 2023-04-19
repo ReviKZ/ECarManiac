@@ -6,6 +6,7 @@ import Home from './Pages/Home';
 import CarList from './Pages/CarList';
 import Car from './Pages/Car';
 import AddCar from './Pages/AddCar';
+import NotFound from './Pages/NotFound';
 
 function App() {
   return (
@@ -28,9 +29,11 @@ function App() {
                   {/* Adding Page */}
                   <Route path="add" element={<AddCar />} />
 
-                  {/* Not-Found Page */}
-                  <Route path="*" element="" />
               </Route>
+
+              {/* Not-Found Page */}
+              <Route path="*" element={<NotFound />} />
+
           </Routes>
       </>
   );
