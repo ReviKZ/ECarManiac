@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
-import Layout from './Pages';
+import Layout from './Pages/Layout';
+import Home from './Pages/Home';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
                   {/* Page Tags */}
 
                   {/* Index Page / Navigation */}
-                  <Route path="" element="" />
+                  <Route path="" element={<Home />} />
 
                   {/* Listing Page */}
                   <Route path="get/list-all" element="" />
