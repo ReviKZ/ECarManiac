@@ -5,6 +5,7 @@ import Layout from './Pages/Layout';
 import Home from './Pages/Home';
 import CarList from './Pages/CarList';
 import Car from './Pages/Car';
+import AddCar from './Pages/AddCar';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
                   <Route path="get/:id" element={<Car />} />
 
                   {/* Adding Page */}
-                  <Route path="add" element="" />
+                  <Route path="add" element={<AddCar />} />
 
                   {/* Not-Found Page */}
                   <Route path="*" element="" />
