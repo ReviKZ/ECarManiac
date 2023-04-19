@@ -4,6 +4,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Layout from './Pages/Layout';
 import Home from './Pages/Home';
 import CarList from './Pages/CarList';
+import Car from './Pages/Car';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
                   <Route path="get/list-all" element={<CarList />} />
 
                   {/* Id Specific Page */}
-                  <Route path="get/:id" element="" />
+                  <Route path="get/:id" element={<Car />} />
 
                   {/* Adding Page */}
                   <Route path="add" element="" />
