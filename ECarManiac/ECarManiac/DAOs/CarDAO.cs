@@ -162,7 +162,7 @@ namespace ECarManiac.DAOs
                     connection.Close();
                 }
 
-                var car = new Car(Brand, Model, SubType,
+                var car = new Car(id, Brand, Model, SubType,
                     Year, Country, BodyType,
                     BatteryType, BatteryCapacity, RealRange, ChargingSpeed,
                     Performance, Torque, Acceleration, MaxSpeed,
@@ -199,6 +199,7 @@ namespace ECarManiac.DAOs
 
                     while (reader.Read())
                     {
+                        var Id = (int)reader["Id"];
                         var Brand = (string)reader["Brand"];
                         var Model = (string)reader["Model"];
                         var SubType = reader["SubType"] as string;
@@ -216,7 +217,7 @@ namespace ECarManiac.DAOs
                         var Trunk = (int)reader["Trunk"];
                         var Frunk = reader["Frunk"] as string;
 
-                        var car = new Car(Brand, Model, SubType,
+                        var car = new Car(Id, Brand, Model, SubType,
                             Year, Country, BodyType,
                             BatteryType, BatteryCapacity, RealRange, ChargingSpeed,
                             Performance, Torque, Acceleration, MaxSpeed,
