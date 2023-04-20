@@ -17,7 +17,7 @@ async function Fetch(type, endpoint, payload) {
 
     if (type === "post") {
         response = await fetch(
-            `https://localhost:4001/api/${endpoint}, {
+            `https://localhost:4001/api/${endpoint}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
