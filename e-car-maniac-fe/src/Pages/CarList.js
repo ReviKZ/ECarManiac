@@ -24,51 +24,51 @@ const CarList = () => {
                     <span class="visually-hidden">Loading...</span>
                 </div>
                 : cars ? cars.map((car) => (
-                    <div>
+                    <div key={car.id}>
                         <p>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target={"#" + car.Id} aria-expanded="false" aria-controls="collapseExample">
-                                {car.Brand} {car.Model} {car.SubType == "null" ? "" : car.SubType}
+                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse-" + car.id} aria-expanded="false" aria-controls={"#collapse-" + car.id } >
+                                {car.brand} {car.model} {car.subType === "null" ? "" : car.subType}
                             </button>
                         </p>
-                        <div class="collapse" id={car.Id}>
+                        <div class="collapse" id={"collapse-" + car.id}>
                             <div class="card card-body">
-                                Vintage: {car.Year}
+                                Vintage: {car.year}
                             </div>
                             <div class="card card-body">
-                                Manufactured in: {car.Country}
+                                Manufactured in: {car.country}
                             </div>
                             <div class="card card-body">
-                                Body Type: {car.BodyType}
+                                Body Type: {car.bodyType}
                             </div>
                             <div class="card card-body">
-                                Battery Type: {car.BatterType}
+                                Battery Type: {car.batteryType}
                             </div>
                             <div class="card card-body">
-                                Battery Capacity: {car.BatteryCapacity} kWh
+                                Battery Capacity: {car.batteryCapacity} kWh
                             </div>
                             <div class="card card-body">
-                                Real Range: {car.RealRange} km
+                                Real Range: {car.realRange} km
                             </div>
                             <div class="card card-body">
-                                Max. Charging Speed: {car.ChargingSpeed} kW
+                                Max. Charging Speed: {car.chargingSpeed} kW
                             </div>
                             <div class="card card-body">
-                                Power: {car.Performance} hp
+                                Power: {car.performance} hp
                             </div>
                             <div class="card card-body">
-                                Torque: {car.Year} Nm
+                                Torque: {car.torque} Nm
                             </div>
                             <div class="card card-body">
-                                0 - 100 km/h: {car.Acceleration} s
+                                0 - 100 km/h: {car.acceleration} s
                             </div>
                             <div class="card card-body">
-                                Max. Speed: {car.MaxSpeed} km/h
+                                Max. Speed: {car.maxSpeed} km/h
                             </div>
                             <div class="card card-body">
-                                Trunk space: {car.Trunk} l
+                                Trunk space: {car.trunk} l
                             </div>
                             <div class="card card-body">
-                                Frunk space: {car.Frunk == "null"? 0 : car.Frunk} l
+                                Frunk space: {car.frunk === "null"? 0 : car.Frunk} l
                             </div>
                         </div>
                     </div>
