@@ -4,6 +4,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration.AddJsonFile("appsettings.json");
 
+builder.Services.AddCors(option => option.AddPolicy("MyCorsPolicy", builder =>
+{
+    builder.WithOrigins("http://localhost:3000")
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials();
+}));
+
 var dbConnectionString = builder.Configuration.GetValue<string>("ConnectionString");
 
 var dbConnection = CarDbManager.TestConnetion(dbConnectionString);
@@ -24,6 +32,7 @@ if (dbConnection == true)
     }
 
     app.UseHttpsRedirection();
+    app.UseCors("MyCorsPolicy");
     app.UseStaticFiles();
 
     app.UseRouting();
