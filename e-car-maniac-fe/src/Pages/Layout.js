@@ -5,7 +5,7 @@ const Layout = () => {
         <main className="App">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <Link to="/" class="navbar-brand" href="/">E-Car Maniac</Link>
+                    <Link to="/" class="navbar-brand">E-Car Maniac</Link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
