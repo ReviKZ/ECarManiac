@@ -24,9 +24,10 @@ namespace ECarManiac.Models
         public int Trunk { get; set; }
         public string Frunk { get; set; }
 
-        public Car(string brand, string model, string sub_type, int year, string country, string body_type, string battery_type, int battery_capacity,
+        public Car(int id, string brand, string model, string sub_type, int year, string country, string body_type, string battery_type, int battery_capacity,
             int real_range, int charging_speed, int performance, int torque, decimal acceleration, int max_speed, int trunk, string frunk)
         {
+            Id = id;
             Brand = brand;
             Model = model;
             SubType = sub_type;
