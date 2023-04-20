@@ -36,8 +36,9 @@ namespace ECarManiac.Controllers.Api
 
         // POST api/
         [HttpPost]
-        public void Post(Car car)
+        public void Post([FromBody] Car car)
         {
+
             carDAO.Add(car);
         }
 
