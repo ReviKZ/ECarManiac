@@ -144,7 +144,7 @@ namespace ECarManiac.DAOs
 
                     Brand = (string)reader["Brand"];
                     Model = (string)reader["Model"];
-                    SubType = (string)reader["SubType"];
+                    SubType = reader["SubType"] as string;
                     Year = (int)reader["Year"];
                     Country = (string)reader["Country"];
                     BodyType = (string)reader["BodyType"];
