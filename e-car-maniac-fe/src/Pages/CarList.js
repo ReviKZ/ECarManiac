@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Fetch from '../Other/Fetch';
 
 const CarList = () => {
@@ -26,7 +27,7 @@ const CarList = () => {
                 : cars ? cars.map((car) => (
                     <div key={car.id}>
                         <p>
-                            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse-" + car.id} aria-expanded="false" aria-controls={"#collapse-" + car.id } >
+                            <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target={"#collapse-" + car.id} aria-expanded="false" aria-controls={"#collapse-" + car.id } >
                                 {car.brand} {car.model} {car.subType === "null" ? "" : car.subType}
                             </button>
                         </p>
@@ -69,6 +70,9 @@ const CarList = () => {
                             </div>
                             <div class="card card-body">
                                 Frunk space: {car.frunk === "null"? 0 : car.Frunk} l
+                            </div>
+                            <div class="card card-body">
+                                <Link to={"/get/" + car.id}><button type="button" class="btn btn-primary">Go to Car Page</button></Link>
                             </div>
                         </div>
                     </div>
