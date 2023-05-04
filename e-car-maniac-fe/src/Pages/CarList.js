@@ -51,7 +51,7 @@ const CarList = () => {
                                 Real Range: {car.realRange} km
                             </div>
                             <div class="card card-body">
-                                Max. Charging Speed: {car.chargingSpeed} kW
+                                Charging Speed: {car.chargingSpeed} min
                             </div>
                             <div class="card card-body">
                                 Power: {car.performance} hp
