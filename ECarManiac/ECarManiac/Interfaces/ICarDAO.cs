@@ -7,8 +7,8 @@ namespace ECarManiac.Interfaces
         /// <summary>
         /// Adds a new car to the database
         /// </summary>
-        /// <param name="car">A new object with a not yet set ID</param>
-        public void Add(Car car);
+        /// <param name="car">A dictionary with all parameters but the ID</param>
+        public void Add(Dictionary<string, string> car);
 
         /// <summary>
         /// Updates an existing car in the database

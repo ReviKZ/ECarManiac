@@ -15,7 +15,7 @@ namespace ECarManiac.DAOs
             _connectionString = connectionString;
         }
 
-        public void Add(Car car)
+        public void Add(Dictionary<string, string> car)
         {
             const string sqlCmd =
                 @"INSERT INTO cars (Brand, Model, SubType, Year, Country, BodyType, BatteryType, BatteryCapacity, RealRange, ChargingSpeed, Performance, Torque,
@@ -33,22 +33,22 @@ namespace ECarManiac.DAOs
                         connection.Open();
                     }
 
-                    cmd.Parameters.AddWithValue("@Brand", car.Brand);
-                    cmd.Parameters.AddWithValue("@Model", car.Model);
-                    cmd.Parameters.AddWithValue("@SubType", car.SubType);
-                    cmd.Parameters.AddWithValue("@Year", car.Year);
-                    cmd.Parameters.AddWithValue("@Country", car.Country);
-                    cmd.Parameters.AddWithValue("@BodyType", car.BodyType);
-                    cmd.Parameters.AddWithValue("@BatteryType", car.BatteryType);
-                    cmd.Parameters.AddWithValue("@BatteryCapacity", car.BatteryCapacity);
-                    cmd.Parameters.AddWithValue("@RealRange", car.RealRange);
-                    cmd.Parameters.AddWithValue("@ChargingSpeed", car.ChargingSpeed);
-                    cmd.Parameters.AddWithValue("@Performance", car.Performance);
-                    cmd.Parameters.AddWithValue("@Torque", car.Torque);
-                    cmd.Parameters.AddWithValue("@Acceleration", car.Acceleration);
-                    cmd.Parameters.AddWithValue("@MaxSpeed", car.MaxSpeed);
-                    cmd.Parameters.AddWithValue("@Trunk", car.Trunk);
-                    cmd.Parameters.AddWithValue("@Frunk", car.Frunk);
+                    cmd.Parameters.AddWithValue("@Brand", car["Brand"]);
+                    cmd.Parameters.AddWithValue("@Model", car["Model"]);
+                    cmd.Parameters.AddWithValue("@SubType", car["SubType"]);
+                    cmd.Parameters.AddWithValue("@Year", car["Year"]);
+                    cmd.Parameters.AddWithValue("@Country", car["Country"]);
+                    cmd.Parameters.AddWithValue("@BodyType", car["BodyType"]);
+                    cmd.Parameters.AddWithValue("@BatteryType", car["BatteryType"]);
+                    cmd.Parameters.AddWithValue("@BatteryCapacity", car["BatteryCapacity"]);
+                    cmd.Parameters.AddWithValue("@RealRange", car["RealRange"]);
+                    cmd.Parameters.AddWithValue("@ChargingSpeed", car["ChargingSpeed"]);
+                    cmd.Parameters.AddWithValue("@Performance", car["Performance"]);
+                    cmd.Parameters.AddWithValue("@Torque", car["Torque"]);
+                    cmd.Parameters.AddWithValue("@Acceleration", car["Acceleration"]);
+                    cmd.Parameters.AddWithValue("@MaxSpeed", car["MaxSpeed"]);
+                    cmd.Parameters.AddWithValue("@Trunk", car["Trunk"]);
+                    cmd.Parameters.AddWithValue("@Frunk", car["Frunk"]);
                     cmd.ExecuteNonQuery();
                     connection.Close();
                 }

@@ -1,4 +1,5 @@
-﻿using ECarManiac.DAOs;
+﻿using System.Runtime.CompilerServices;
+using ECarManiac.DAOs;
 using ECarManiac.Interfaces;
 using ECarManiac.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -36,7 +37,7 @@ namespace ECarManiac.Controllers.Api
 
         // POST api/
         [HttpPost]
-        public void Post([FromBody] Car car)
+        public void Post([FromBody] Dictionary<string, string> car)
         {
 
             carDAO.Add(car);
