@@ -28,5 +28,12 @@ namespace ECarManiac.Interfaces
         /// </summary>
         /// <returns>All the cars int the database</returns>
         public List<Car> GetAll();
+
+        /// <summary>
+        /// Removes an existing car from the database
+        /// </summary>
+        /// <param name="id">The id of the car which needs to be removed</param>
+        /// <returns></returns>
+        public void Remove(int id);
     }
 }

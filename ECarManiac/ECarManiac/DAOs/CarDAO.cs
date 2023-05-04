@@ -236,6 +236,32 @@ namespace ECarManiac.DAOs
                 throw new RuntimeWrappedException(e);
             }
         }
+
+        public void Remove(int id)
+        {
+            const string sqlCmd =
+                @"DELETE FROM cars WHERE Id = @Id";
+
+            try
+            {
+                using (var connection = new SqlConnection(_connectionString))
+                {
+                    var cmd = new SqlCommand(sqlCmd, connection);
+                    if (connection.State == ConnectionState.Closed)
+                    {
+                        connection.Open();
+                    }
+
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (SqlException e)
+            {
+                throw new RuntimeWrappedException(e);
+            }
+        }
     }
 
 }

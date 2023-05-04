@@ -54,7 +54,7 @@ namespace ECarManiac.Controllers.Api
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            carDAO.Remove(id);
         }
     }
 }
