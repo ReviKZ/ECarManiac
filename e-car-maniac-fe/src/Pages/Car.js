@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Fetch from '../Other/Fetch';
 
@@ -17,6 +17,10 @@ const Car = () => {
         dataFetch();
     }, []);
 
+    const deleteCar = useCallback(() => {
+        Fetch("delete", params.id, "");
+        navigate("/");
+    }, []);
 
     return (
         <>
@@ -44,6 +48,7 @@ const Car = () => {
                             <li class="list-group-item">Frunk space: {car.frunk === "null" ? 0 : car.Frunk} l</li>
                         </ul>
                         <button type="button" class="btn btn-primary" onClick={() => navigate(-1)}>Go Back</button>
+                        <button type="button" class="btn btn-danger" onClick={deleteCar}>Delete</button>
                     </div>
                 ) : (
                     <div>
