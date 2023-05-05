@@ -27,6 +27,14 @@ async function Fetch(type, endpoint, payload) {
         );
     }
 
+    if (type === "delete") {
+        response = await fetch(
+            `https://localhost:4001/api/${endpoint}`, {
+            method: "DELETE",
+        }
+        );
+    }
+
     if (!response.ok) {
         return false;
     }
