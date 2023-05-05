@@ -33,8 +33,8 @@ const AddCar = () => {
             Frunk: form["Frunk"]? form["Frunk"] : null
         };
 
-        var result = await Fetch("post", "", formData);
-        result ? navigate("") : alert("Something went wrong!");
+        Fetch("post", "", formData);
+        navigate("/");
 
     };
 
@@ -108,7 +108,7 @@ const AddCar = () => {
                     <input onChange={(e) => updateField(e.target.value, "Frunk")} id="Frunk" type="text" /><p>l</p>
                 </div>
 
-                <button type="submit" className="submit-button"
+                <button type="submit" class="btn btn-success"
                     onClick={addCarToDb}>Add Car</button>
 
             </form>
