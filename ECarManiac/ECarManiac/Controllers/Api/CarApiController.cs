@@ -1,4 +1,5 @@
-﻿using ECarManiac.DAOs;
+﻿using System.Runtime.CompilerServices;
+using ECarManiac.DAOs;
 using ECarManiac.Interfaces;
 using ECarManiac.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -36,8 +37,9 @@ namespace ECarManiac.Controllers.Api
 
         // POST api/
         [HttpPost]
-        public void Post(Car car)
+        public void Post([FromBody] Dictionary<string, string> car)
         {
+
             carDAO.Add(car);
         }
 
@@ -52,7 +54,7 @@ namespace ECarManiac.Controllers.Api
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            carDAO.Remove(id);
         }
     }
 }
